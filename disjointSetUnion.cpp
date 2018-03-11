@@ -7,7 +7,7 @@ ll n,m;
 vector <ll> arr;
 vector <ll> size;
 
-int initialize() {
+void initialize() {
     arr.push_back(0);
     size.push_back(0);
     for(ll i=1; i<=n; i++) {
@@ -17,7 +17,7 @@ int initialize() {
 }
 
 // to calculate the root.
-int root(int i) {
+ll root(ll i) {
     while(arr[i] != i) {
         arr[i] = arr[arr[i]];
         i = arr[i];
@@ -26,9 +26,9 @@ int root(int i) {
 }
 
 // the heart of my code
-void weighted_union(int a, int b) {
-    int root_a = root(a);
-    int root_b = root(b);
+void weighted_union(ll a, ll b) {
+    ll root_a = root(a);
+    ll root_b = root(b);
     if(root_a == root_b){
         return;
     }
